@@ -1,0 +1,29 @@
+<h2 class="title"><%= @user.username %>のマイページ</h2>
+
+<div class="user-myimage">
+  <% if @user.course == "Web" %>
+    <a href="/users/<%= @user.id %>"><%= image_tag @user.image_url, class: "user-image web" %></a>
+  <% elsif @user.course == "Game" %>
+    <a href="/users/<%= @user.id %>"><%= image_tag @user.image_url, class: "user-image game" %></a>
+  <% else %>
+    <a href="/users/<%= @user.id %>"><%= image_tag @user.image_url, class: "user-image ios" %></a>
+  <% end %>
+  <div class="balloon4">
+    <p><%= @user.profile %></p>
+  </div>
+</div>
+
+<h2 class="title">ユーザーの投稿一覧</h2>
+<div class="mypage-box">
+  <% @user.posts.each do |t| %>
+    <div class="mypage-post">
+      <p class="show-title">【Geek史】</p>
+      <%= t.geek %>
+    </div>
+  <% end %>
+  <div class="my-page-flex">
+    <% if user_signed_in? && current_user.id == @user.id %>
+      <%= button_to "編集する", edit_user_registration_path, method: :get , class: "mypage-btn" %>
+    <% end %>
+  </div>
+</div>

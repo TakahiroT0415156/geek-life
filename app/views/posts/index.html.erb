@@ -1,0 +1,94 @@
+<div class="box">
+  <div class="box-field">
+    <h2 class="search-title"><i class="fas fa-check"></i> 条件から探す</h2>
+    <div class="search-field">
+      <%= form_tag({controller:"posts",action:"index"}, method: :get) do %>
+        <div class="search-border">
+          <div class="search-box"><i class="fas fa-pen"></i> フリーワード</div>
+            <%= text_field_tag :search, "", class: "search-input", placeholder: "名前、役職、コース、内容" %>
+        </div>
+        <div class="search-field-box">
+          <div class="search-border">
+            <div class="search-box"><i class="fas fa-tag"></i> タグ選択</div>
+            <%= select_tag :tag_id, options_from_collection_for_select(Tag.all, :id, :name, params[:tag_id]), {class: 'search-input tag', include_blank: 'タグ絞り込み'} %>
+          </div>
+        </div>
+        <div class="search-btn-field">
+          <%= submit_tag '検索する', class: "search_btn"  %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<h2 class="title"><i class="fas fa-check"></i> 一覧から探す</h2>
+<div class="post-container">
+  <% @posts.each do |t| %>
+    <div class="post-card">
+      <div class="card-user">
+        <div class="position">
+          <% if t.user.course == "Web" %>
+            <span class="user-region web">
+              <%= t.user.region %>
+            </span>
+            <span class="user-postion web">
+              <%= t.user.postion %>
+            </span>
+            <span class="user-course web">
+              <%= t.user.course %>
+            </span>
+          <% elsif t.user.course == "Game" %>
+            <span class="user-region game">
+              <%= t.user.region %>
+            </span>
+            <span class="user-postion game">
+              <%= t.user.postion %>
+            </span>
+            <span class="user-course game">
+              <%= t.user.course %>
+            </span>
+          <% else %>
+            <span class="user-region ios">
+              <%= t.user.region %>
+            </span>
+            <span class="user-postion ios">
+              <%= t.user.postion %>
+            </span>
+            <span class="user-course ios">
+              <%= t.user.course %>
+            </span>
+          <% end %>
+        </div>
+        <div class="user-content">
+          <div>
+            <% if t.user.course == "Web" %>
+              <a href="/users/<%= t.user.id %>"><%= image_tag t.user.image_url, class: "user-image web" %></a>
+            <% elsif t.user.course == "Game" %>
+              <a href="/users/<%= t.user.id %>"><%= image_tag t.user.image_url, class: "user-image game" %></a>
+            <% else %>
+              <a href="/users/<%= t.user.id %>"><%= image_tag t.user.image_url, class: "user-image ios" %></a>
+            <% end %>
+          </div>
+          <div class="user-info">
+            <a href="/users/<%= t.user.id %>" class="user-name"><%= t.user.username %></a>
+            <div class="user-tag">
+              <div class="tag-flex">
+                <% t.tags.each do |tag| %>
+                  <div class="tag-name"><%= tag.name %></div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-btn">
+        <%= link_to post_path(t.id), class: 'card-link' do %>
+          <div class="card-content">
+            <p class="card-about"><%= t.geek %></p>
+          </div>
+          <%= button_to "もっと詳しく", post_path(t.id), class: "card-show" %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

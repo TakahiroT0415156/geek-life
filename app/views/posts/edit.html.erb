@@ -1,0 +1,12 @@
+<h2>編集ページ</h2>
+<%= form_for @post do |f| %>
+  <%= f.label :about %><br />
+  <%= f.text_field :about %><br />
+  <%= f.label :geek %><br />
+  <%= f.text_field :geek %><br />
+  <%= f.label :power %><br />
+  <%= f.text_field :power %><br />
+  <%= f.label :force %><br />
+  <%= f.text_field :force %><br />
+  <%= f.submit "編集する" %>
+<% end %>

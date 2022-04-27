@@ -1,0 +1,130 @@
+<h2 class="title">アカウント編集</h2>
+
+<div class="edit-box">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+
+    <div class="form-group">
+      <div class="image_form">
+        <div class="image_form__contents">
+          <%= f.label :image, class: 'image_label' do %>
+            <div class="prev-contents">
+              <% if @user.image.present? %>
+                <div class="prev-content">
+                  <%= image_tag @user.image.url, alt: "preview", class: "prev-image" %><br />
+                </div>
+              <% else %>
+                <i class="fas fa-image"></i><br />
+              <% end %>
+            </div>
+            <%= f.file_field :image, class: 'image_form_contents_field hidden_file' %><br />
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="edit-form">
+      <div class="form-label">
+        <%= f.label :username, "名前", class: "form-label-name" %>
+      </div>
+      <div class="form-field">
+        <%= f.text_field :username, autofocus: true, class: "form-field-input" %>
+      </div>
+    </div>
+
+    <div class="edit-form">
+      <div class="form-label">
+        <%= f.label :postion, "役職", class: "form-label-name" %>
+      </div>
+      <div class="form-field">
+        <%= f.text_field :postion, autofocus: true, class: "form-field-input" %>
+      </div>
+    </div>
+
+    <div class="edit-form">
+      <div class="form-label">
+        <%= f.label :region, "領域", class: "form-label-name" %>
+      </div>
+      <div class="form-field">
+        <%= f.text_field :region, autofocus: true, class: "form-field-input" %>
+      </div>
+    </div>
+
+    <div class="edit-form">
+      <div class="form-label">
+        <%= f.label :course, "コース", class: "form-label-name" %>
+      </div>
+      <div class="form-field">
+        <%= f.text_field :course, autofocus: true, class: "form-field-input" %>
+      </div>
+    </div>
+
+    <div class="edit-form">
+      <div class="form-label">
+        <%= f.label :profile, "自己紹介", class: "form-label-name" %>
+      </div>
+      <div class="form-field">
+        <%= f.text_area :profile, class: "form-field-area", placeholder: "自分の自己紹介を書いてください！" %>
+      </div>
+    </div>
+
+    <div class="edit-form">
+      <div class="form-label">
+        <%= f.label :current_password, "パスワード", class: "form-label-name" %><br />
+        <i class="form-label-name">(変更したい場合はパスワードを入力)</i>
+      </div>
+      <div class="form-field">
+        <%= f.password_field :current_password, autocomplete: "current-password", class: "form-field-input", placeholder: "自分の自己紹介を書いてください！" %>
+      </div>
+    </div>
+
+    <div class="edit-btn-field">
+      <%= f.submit "変更する", class: "edit-btn" %>
+    </div>
+
+  <% end %>
+</div>
+
+
+<script>
+  $(document).on('turbolinks:load', function () {
+  $(function () {
+    // 画像をプレビュー表示させる.prev-contentを作成
+    function buildHTML(image) {
+      var html =
+        `
+        <div class="prev-content">
+          <img src="${image}", alt="preview" class="prev-image">
+        </div>
+        `
+      return html;
+    }
+
+    // 画像が選択された時に発火します
+    $(document).on('change', '.hidden_file', function () {
+      // .file_filedからデータを取得して変数fileに代入します
+      var file = this.files[0];
+      // FileReaderオブジェクトを作成します
+      var reader = new FileReader();
+      // DataURIScheme文字列を取得します
+      reader.readAsDataURL(file);
+      // 読み込みが完了したら処理が実行されます
+      reader.onload = function () {
+        // 読み込んだファイルの内容を取得して変数imageに代入します
+        var image = this.result;
+        // プレビュー画像がなければ処理を実行します
+        if ($('.prev-content').length == 0) {
+          // 読み込んだ画像ファイルをbuildHTMLに渡します
+          var html = buildHTML(image)
+          // 作成した.prev-contentをiconの代わりに表示させます
+          $('.prev-contents').prepend(html);
+          // 画像が表示されるのでiconを隠します
+          $('.photo-icon').hide();
+        } else {
+          // もし既に画像がプレビューされていれば画像データのみを入れ替えます
+          $('.prev-content .prev-image').attr({ src: image });
+        }
+      }
+    });
+  });
+});
+</script>

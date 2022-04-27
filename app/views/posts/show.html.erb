@@ -1,0 +1,24 @@
+<h2 class="title">
+  <%= @post.user.username %>
+</h2>
+
+<div class="show-box">
+  <div class="user-tag">
+    <div class="tag-flex show-flex">
+      <% @post.tags.each do |tag| %>
+        <div class="tag-name">
+          <%= tag.name %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="show-geek">
+    <p class="show-title">【Geek史】</p>
+    <%= @post.geek %>
+  </div>
+  <div class="btn-flex">
+    <% if user_signed_in? && current_user.id == @post.user_id %>  
+      <%= button_to "削除する", post_path(@post.id), method: :delete, class: "btn" %>
+    <% end %>
+  </div>
+</div>
