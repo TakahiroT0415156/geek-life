@@ -2,52 +2,55 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.show-box {
-  margin: 2rem auto;
-  background-color: rgb(246, 251, 253);
-  border: solid;
-  width: 60%;
-  border-radius: 5px;
-  .show-title {
-    font-size: 1.3rem;
-    text-align: center;
-    width: 20%;
-    padding-bottom: 3px;
-    background: linear-gradient(transparent 60%, rgb(147, 179, 255) 30%);
-  }
-  .show-me {
+@media screen and (min-width: 960px) {
+	/* 960px以上に適用されるCSS（PC用） */
+  .show-box {
+    margin: 2rem auto;
+    background-color: rgb(246, 251, 253);
     border: solid;
-    margin: 1rem;
-    padding: 1rem 0.5rem;
+    width: 60%;
     border-radius: 5px;
+    .show-title {
+      font-size: 1.3rem;
+      text-align: center;
+      width: 20%;
+      padding-bottom: 3px;
+      background: linear-gradient(transparent 60%, rgb(147, 179, 255) 30%);
+    }
+    .show-me {
+      border: solid;
+      margin: 1rem;
+      padding: 1rem 0.5rem;
+      border-radius: 5px;
+    }
+    .show-geek {
+      border: solid;
+      margin: 1rem;
+      padding: 1rem 0.5rem;
+      border-radius: 5px;
+    }
   }
-  .show-geek {
-    border: solid;
-    margin: 1rem;
-    padding: 1rem 0.5rem;
-    border-radius: 5px;
+  
+  .show-flex {
+    margin: 1rem 0.5rem;
+    justify-content: end;
   }
-}
-
-.show-flex {
-  margin: 1rem 0.5rem;
-  justify-content: end;
-}
-
-.btn-flex {
-  width: 50%;
-  display: flex;
-  margin: 1rem auto;
-  justify-content: space-around;
-  .btn {
-    width: 7rem;
-    height: 2.3rem;
-    margin: 0.5rem;
-    border: solid;
-    border-radius: 5px;
-    &:hover {
-      cursor: pointer;
-      background-color: rgb(123, 215, 252);
+  
+  .btn-flex {
+    width: 50%;
+    display: flex;
+    margin: 1rem auto;
+    justify-content: space-around;
+    .btn {
+      width: 7rem;
+      height: 2.3rem;
+      margin: 0.5rem;
+      border: solid;
+      border-radius: 5px;
+      &:hover {
+        cursor: pointer;
+        background-color: rgb(123, 215, 252);
+      }
     }
   }
 }

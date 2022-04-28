@@ -2,41 +2,44 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-header {
-  background-color: #424242;
-  height: 80px;
-  font-weight: bold;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-header h1 {
-  color: #fff;
-  margin-left: 20px;
-}
-
-header a {
-  color: rgb(134, 137, 144);
-  text-decoration: none; 
-}
-
-.now {
-  color: #fff;
-  text-decoration: none; 
-}
-
-.header-list {
-  display: flex;
-  align-items: center;
-}
-
-header ul {
-  display: flex;
-}
-
-header li {
-  list-style: none;
-  margin-right: 40px;
-  font-size: 1rem;
+@media screen and (min-width: 960px) {
+	/* 960px以上に適用されるCSS（PC用） */
+  header {
+    background-color: #424242;
+    height: 80px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  header h1 {
+    color: #fff;
+    margin-left: 20px;
+  }
+  
+  header a {
+    color: rgb(134, 137, 144);
+    text-decoration: none; 
+  }
+  
+  .now {
+    color: #fff;
+    text-decoration: none; 
+  }
+  
+  .header-list {
+    display: flex;
+    align-items: center;
+  }
+  
+  header ul {
+    display: flex;
+  }
+  
+  header li {
+    list-style: none;
+    margin-right: 40px;
+    font-size: 1rem;
+  }
 }
