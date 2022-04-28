@@ -9,7 +9,7 @@ class PostsController < ApplicationController
       @posts = posts && post
     elsif params[:search].present?
       search = params[:search]
-      @posts = Post.where("body LIKE ? OR title LIKE ?", "%#{search}%", "%#{search}%")
+      @posts = Post.where("about LIKE ? OR geek LIKE ? OR username LIKE ? OR postion LIKE ? OR region LIKE ? OR course LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
     elsif params[:tag_id].present?
       @posts =  Tag.find(params[:tag_id]).posts
     else
