@@ -15,6 +15,7 @@ class PostsController < ApplicationController
     else
       @posts = Post.all
     end
+    @posts = @posts.reverse
   end
 
   def new
