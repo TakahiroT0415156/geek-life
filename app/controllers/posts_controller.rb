@@ -4,12 +4,12 @@ class PostsController < ApplicationController
   def index
     if params[:search].present? && params[:tag_id].present?
       search = params[:search]
-      posts = Post.where("about LIKE ? OR geek LIKE ? OR username LIKE ? OR postion LIKE ? OR region LIKE ? OR course LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+      posts = Post.joins(:user).where("geek LIKE ? OR username LIKE ? OR postion LIKE ? OR region LIKE ? OR course LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
       post = Tag.find(params[:tag_id]).posts
       @posts = posts && post
     elsif params[:search].present?
       search = params[:search]
-      @posts = Post.where("about LIKE ? OR geek LIKE ? OR username LIKE ? OR postion LIKE ? OR region LIKE ? OR course LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+      @posts = Post.joins(:user).where("geek LIKE ? OR username LIKE ? OR postion LIKE ? OR region LIKE ? OR course LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
     elsif params[:tag_id].present?
       @posts =  Tag.find(params[:tag_id]).posts
     else
