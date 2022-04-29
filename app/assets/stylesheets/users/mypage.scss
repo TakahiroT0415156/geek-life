@@ -13,6 +13,7 @@
       margin-left: 1rem;
       margin-right: 2rem;
       border-radius: 50%;
+      background-color: #fff;
       &.web {
         border: solid 3px rgb(255, 129, 129);
       }
@@ -64,12 +65,14 @@
     width: 80%;
     margin: 0 auto;
     border-radius: 5px;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
+    background-color: #fff;
     .mypage-post {
       padding: 1rem;
       border: solid;
       margin: 2rem 3rem;
       border-radius: 5px;
+      background-color: #fff;
     }
   }
   
