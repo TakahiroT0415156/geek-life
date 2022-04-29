@@ -14,7 +14,7 @@
   </div>
   <div class="show-geek">
     <p class="show-title">【Geek史】</p>
-    <%= @post.geek %>
+    <div class="show"><%= @post.geek %></div>
   </div>
   <div class="btn-flex">
     <% if user_signed_in? && current_user.id == @post.user_id %>  

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>GeekSalon</title>
+    <title>Geek Life</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -15,7 +15,7 @@
 
   <body>
     <header>
-      <h1><%= link_to "Career Pass", posts_path, class: "now" %></h1>
+      <h1><%= link_to "Geek Life", posts_path, class: "now" %></h1>
       <div class="header-list">
         <ul>
           <% if user_signed_in? && current_page?(new_post_path) %>
