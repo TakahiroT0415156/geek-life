@@ -6,17 +6,18 @@
     <div class="form-group">
       <div class="image_form">
         <div class="image_form__contents">
-          <%= f.label :image, class: 'image_label' do %><br />
+          <%= f.label :image, class: 'image_label' do %>
             <div class="prev-contents">
               <% if @user.image.present? %>
                 <div class="prev-content">
-                  <%= image_tag @user.image.url, alt: "preview", class: "prev-image" %><br />
+                  <%= image_tag @user.image.url, alt: "preview", class: "prev-image" %>
                 </div>
               <% else %>
-                <i class="fas fa-image"></i><br />
+                <i class="fas fa-image"></i>
+                <div id="comment">※pngの画像で登録してください！</div>
               <% end %>
             </div>
-            <%= f.file_field :image, class: 'image_form_contents_field hidden_file' %><br />
+            <%= f.file_field :image, class: 'image_form_contents_field hidden_file' %>
           <% end %>
         </div>
       </div>
@@ -36,7 +37,7 @@
         <%= f.label :postion, class: "form-label-name" %>
       </div>
       <div class="form-field">
-        <%= f.text_field :postion, class: "form-input", placeholder: "自分の役職" %>
+        <%= f.select :postion, [["教室長", "教室長"],["統括", "統括"], ["長", "長"], ["リーダー", "リーダー"], ["プレイヤー", "プレイヤー"]], include_blank: "役職", class: "form-select select" %>
       </div>
     </div>
 
@@ -45,7 +46,7 @@
         <%= f.label :region, class: "form-label-name" %>
       </div>
       <div class="form-field">
-        <%= f.text_field :region, class: "form-input", placeholder: "自分の領域" %>
+        <%= f.select :region, [["組織長", "組織長"],["IS", "IS"], ["QM", "QM"], ["MR", "MR"], ["HR", "HR"], ["CR", "CR"], ["プレイヤー", "プレイヤー"]], include_blank: "領域", class: "form-select select" %>
       </div>
     </div>
 
@@ -54,7 +55,7 @@
         <%= f.label :course, class: "form-label-name" %>
       </div>
       <div class="form-field">
-        <%= f.select :course, [["Web", "Web"], ["Game", "Game"], ["iPhone", "iPhone"]], include_blank: "どのコース？", class: "form-select select" %>
+        <%= f.select :course, [["Web", "Web"], ["Game", "Game"], ["iPhone", "iPhone"]], include_blank: "コース", class: "form-select select" %>
       </div>
     </div>
 

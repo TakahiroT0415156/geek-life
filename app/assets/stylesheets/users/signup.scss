@@ -7,6 +7,11 @@
   .image_form_contents_field {
     display: none;
   }
+
+  #comment {
+    font-size: 0.7rem;
+    color: #757575;
+  }
   
   .prev-image {
     height: 150px;
@@ -14,13 +19,31 @@
     border-radius: 50%;
   }
   
+  #user_postion {
+    width: 60%;
+    padding: 0.5rem;
+    text-align: center;
+    border-radius: 8px;
+    border: solid;
+    height: 2.5rem;
+    color: #757575;
+  }
+  #user_region {
+    width: 60%;
+    padding: 0.5rem;
+    text-align: center;
+    border-radius: 8px;
+    border: solid;
+    height: 2.5rem;
+    color: #757575;
+  }
   #user_course {
     width: 60%;
     padding: 0.5rem;
     text-align: center;
     border-radius: 8px;
     border: solid;
-    height: 2rem;
+    height: 2.5rem;
     color: #757575;
   }
 }
