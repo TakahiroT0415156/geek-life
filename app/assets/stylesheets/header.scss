@@ -5,7 +5,6 @@
 @media screen and (min-width: 960px) {
 	/* 960px以上に適用されるCSS（PC用） */
   header {
-    background-color: #424242;
     height: 80px;
     font-weight: bold;
     display: flex;
@@ -14,17 +13,17 @@
   }
   
   header h1 {
-    color: #fff;
+    color: #282828;
     margin-left: 20px;
   }
   
   header a {
-    color: rgb(134, 137, 144);
+    color: #282828;
     text-decoration: none; 
   }
   
   .now {
-    color: #fff;
+    color: #e01111;
     text-decoration: none; 
   }
   

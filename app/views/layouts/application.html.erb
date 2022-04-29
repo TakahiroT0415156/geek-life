@@ -15,7 +15,7 @@
 
   <body>
     <header>
-      <h1><%= link_to "Geek Life", posts_path, class: "now" %></h1>
+      <h1><%= image_tag "icon.png", size: "50x50" %><%= link_to "eek Life", posts_path %></h1>
       <div class="header-list">
         <ul>
           <% if user_signed_in? && current_page?(new_post_path) %>
