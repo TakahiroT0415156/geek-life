@@ -14,7 +14,7 @@
                 </div>
               <% else %>
                 <i class="fas fa-image"></i>
-                <div id="comment">※pngの画像で登録してください！</div>
+                <div class="comment">※pngの画像で登録してください！</div>
               <% end %>
             </div>
             <%= f.file_field :image, class: 'image_form_contents_field hidden_file' %>
@@ -62,6 +62,7 @@
     <div class="edit-form">
       <div class="form-label">
         <%= f.label :email, "メールアドレス", class: "form-label-name" %>
+        <div class="comment">※@geek.comで登録してください！</div>
       </div>
       <div class="form-field">
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-input", placeholder: "name@geek.com" %>
