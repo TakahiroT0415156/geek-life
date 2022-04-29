@@ -15,13 +15,13 @@
       border-radius: 50%;
       background-color: #fff;
       &.web {
-        border: solid 3px rgb(255, 129, 129);
+        border: solid 3px #D8696D;
       }
       &.game {
-        border: solid 3px rgb(109, 177, 255);
+        border: solid 3px #6BAFE3;
       }
       &.ios {
-        border: solid 3px rgb(255, 196, 119);
+        border: solid 3px #E99C45;
       }
     }
   }
