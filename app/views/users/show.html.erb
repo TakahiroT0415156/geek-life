@@ -13,12 +13,11 @@
   </div>
 </div>
 
-<h2 class="title"><%= @user.username %>の投稿一覧</h2>
+<h2 class="title"><%= @user.username %>のGeek史一覧</h2>
 <div class="mypage-box">
   <% @user.posts.each do |t| %>
     <div class="mypage-post">
-      <p class="show-title">【Geek史】</p>
-      <%= t.geek %>
+      <%= simple_format t.geek %>
     </div>
   <% end %>
   <div class="my-page-flex">

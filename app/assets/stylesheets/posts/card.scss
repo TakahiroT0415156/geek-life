@@ -28,7 +28,6 @@
     box-shadow: 0 10px 25px 0 rgba(60, 194, 235, 0.5);
     margin: 1.3rem;
     width: 30%;
-    height: 18rem;
   }
   
   .card-btn {
@@ -41,12 +40,14 @@
       color: #000;
     }
     
-    .card-content {
-      padding: 0.5rem;
-      margin: 0 2rem;
+    .card-about {
+      margin: 1rem 2rem;
+      white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      white-space: nowrap;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 1;
     }
     
     .card-show {

@@ -84,7 +84,7 @@
       <div class="card-btn">
         <%= link_to post_path(t.id), class: 'card-link' do %>
           <div class="card-content">
-            <p class="card-about"><%= t.geek %></p>
+            <div class="card-about"><%= simple_format t.geek %></div>
           </div>
           <%= button_to "もっと詳しく", post_path(t.id), class: "card-show" %>
         <% end %>
