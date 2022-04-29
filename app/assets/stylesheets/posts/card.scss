@@ -2,65 +2,61 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-@media screen and (min-width: 960px) {
-	/* 960px以上に適用されるCSS（PC用） */
+.title {
+  width: 20%;
+  margin: 2rem auto;
+  text-align: center;
+  position: relative;
+  border-bottom: double 5px rgb(147, 179, 255);
+}
+
+.post-container {
+  display: flex;
+  width: 100%;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 5rem;
+}
+
+.post-card {
+  background-color: rgb(255, 255, 255);
+  border: solid rgba(152, 206, 223, 0.5);
+  box-shadow: 0 10px 25px 0 rgba(60, 194, 235, 0.5);
+  margin: 1.3rem;
+  width: 30%;
+}
+
+.card-btn {
+  width: 100%;
+  text-align: center;
+  margin: 1rem auto;
   
-  .title {
-    width: 20%;
-    margin: 2rem auto;
-    text-align: center;
-    position: relative;
-    border-bottom: double 5px rgb(147, 179, 255);
+  .card-link {
+    text-decoration: none;
+    color: #000;
   }
   
-  .post-container {
-    display: flex;
-    width: 100%;
-    flex-flow: row wrap;
-    align-items: center;
-    justify-content: space-around;
-    margin-bottom: 5rem;
+  .card-about {
+    margin: 1rem 2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
   }
   
-  .post-card {
-    background-color: rgb(255, 255, 255);
-    border: solid rgba(152, 206, 223, 0.5);
-    box-shadow: 0 10px 25px 0 rgba(60, 194, 235, 0.5);
-    margin: 1.3rem;
-    width: 30%;
-  }
-  
-  .card-btn {
-    width: 100%;
-    text-align: center;
-    margin: 1rem auto;
-    
-    .card-link {
-      text-decoration: none;
-      color: #000;
-    }
-    
-    .card-about {
-      margin: 1rem 2rem;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 1;
-    }
-    
-    .card-show {
-      width: 7rem;
-      height: 2.3rem;
-      margin: 0.5rem;
-      margin-top: 1rem;
-      border: solid;
-      border-radius: 5px;
-      &:hover {
-        cursor: pointer;
-        background-color: rgb(123, 215, 252);
-      }
+  .card-show {
+    width: 7rem;
+    height: 2.3rem;
+    margin: 0.5rem;
+    margin-top: 1rem;
+    border: solid;
+    border-radius: 5px;
+    &:hover {
+      cursor: pointer;
+      background-color: rgb(123, 215, 252);
     }
   }
 }

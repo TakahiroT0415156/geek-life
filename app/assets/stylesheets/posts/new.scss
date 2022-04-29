@@ -2,104 +2,101 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-@media screen and (min-width: 960px) {
-	/* 960px以上に適用されるCSS（PC用） */
-  .form-box {
-    border: solid;
-    width: 80%;
+.form-box {
+  border: solid;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+.new-form {
+  margin: 2rem;
+  text-align: center;
+  border-radius: 5px;
+  .form-label {
+    margin: 1rem 0;
+  }
+}
+
+.form-check-label {
+  margin-right: 10px;
+}
+
+.form-label-name {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  background:linear-gradient(transparent 60%, rgb(147, 179, 255) 0%);
+}
+
+.form-tag {
+  margin: 0 auto;
+}
+
+.form-field {
+  margin-bottom: 2rem;
+}
+
+.form-field-area-me {
+  width: 80%;
+  padding: 1rem;
+  height: 100px;
+  border-radius: 8px;
+}
+
+.form-field-area {
+  width: 80%;
+  padding: 1rem;
+  height: 300px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  line-height: 1.5rem;
+}
+
+.form-btn-field {
+  text-align: center;
+  margin: 1rem auto;
+  .form-btn {
+    padding: 0.5rem 1rem;
     margin: 0 auto;
     border-radius: 5px;
-  }
-  
-  .new-form {
-    margin: 2rem;
-    text-align: center;
-    border-radius: 5px;
-    .form-label {
-      margin: 1rem 0;
-    }
-  }
-  
-  .form-check-label {
-    margin-right: 10px;
-  }
-  
-  .form-label-name {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    background:linear-gradient(transparent 60%, rgb(147, 179, 255) 0%);
-  }
-  
-  .form-tag {
-    margin: 0 auto;
-  }
-  
-  .form-field {
-    margin-bottom: 2rem;
-  }
-  
-  .form-field-area-me {
-    width: 80%;
-    padding: 1rem;
-    height: 100px;
-    border-radius: 8px;
-  }
-  
-  .form-field-area {
-    width: 80%;
-    padding: 1rem;
-    height: 300px;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    line-height: 1.5rem;
-  }
-  
-  .form-btn-field {
-    text-align: center;
-    margin: 1rem auto;
-    .form-btn {
-      padding: 0.5rem 1rem;
-      margin: 0 auto;
-      border-radius: 5px;
-      border: solid;
-      &:hover {
-        cursor: pointer;
-        border: solid;
-        border-radius: 5px;
-        background-color: rgb(123, 215, 252);
-      }
-    }
-  }
-  
-  .tag-field {
-    margin-top: 1rem;
-  }
-  
-  .add-tag {
     border: solid;
-    width: 80%;
-    margin: 1.5rem auto;
-    border-radius: 5px;
-    text-align: center;
-    padding-top: 2rem;
-    .tag-input {
-      width: 30%;
-      height: 2rem;
-      padding-left: 10px;
-      margin-bottom: 1.5rem;
-    }
-    .tag-btn {
-      padding: 0.5rem 1rem;
-      margin: 0 auto;
-      margin-bottom: 1rem;
-      border-radius: 5px;
+    &:hover {
+      cursor: pointer;
       border: solid;
-      &:hover {
-        cursor: pointer;
-        border: solid;
-        border-radius: 5px;
-        background-color: rgb(123, 215, 252);
-      }
+      border-radius: 5px;
+      background-color: rgb(123, 215, 252);
+    }
+  }
+}
+
+.tag-field {
+  margin-top: 1rem;
+}
+
+.add-tag {
+  border: solid;
+  width: 80%;
+  margin: 1.5rem auto;
+  border-radius: 5px;
+  text-align: center;
+  padding-top: 2rem;
+  .tag-input {
+    width: 30%;
+    height: 2rem;
+    padding-left: 10px;
+    margin-bottom: 1.5rem;
+  }
+  .tag-btn {
+    padding: 0.5rem 1rem;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    border: solid;
+    &:hover {
+      cursor: pointer;
+      border: solid;
+      border-radius: 5px;
+      background-color: rgb(123, 215, 252);
     }
   }
 }

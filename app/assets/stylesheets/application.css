@@ -33,9 +33,7 @@ a {
   color: #e01111;
   margin-right: 0.3rem;
 }
-@media screen and (min-width: 960px) {
-	/* 960px以上に適用されるCSS（PC用） */
-  main {
-    min-height: 700px;
-  }
+
+main {
+  min-height: 700px;
 }

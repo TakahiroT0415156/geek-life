@@ -2,48 +2,45 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-@media screen and (min-width: 960px) {
-	/* 960px以上に適用されるCSS（PC用） */
-  .image_form_contents_field {
-    display: none;
-  }
+.image_form_contents_field {
+  display: none;
+}
 
-  #comment {
-    font-size: 0.7rem;
-    color: #757575;
-  }
-  
-  .prev-image {
-    height: 150px;
-    width: 150px;
-    border-radius: 50%;
-  }
-  
-  #user_postion {
-    width: 60%;
-    padding: 0.5rem;
-    text-align: center;
-    border-radius: 8px;
-    border: solid;
-    height: 2.5rem;
-    color: #757575;
-  }
-  #user_region {
-    width: 60%;
-    padding: 0.5rem;
-    text-align: center;
-    border-radius: 8px;
-    border: solid;
-    height: 2.5rem;
-    color: #757575;
-  }
-  #user_course {
-    width: 60%;
-    padding: 0.5rem;
-    text-align: center;
-    border-radius: 8px;
-    border: solid;
-    height: 2.5rem;
-    color: #757575;
-  }
+#comment {
+  font-size: 0.7rem;
+  color: #757575;
+}
+
+.prev-image {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+
+#user_postion {
+  width: 60%;
+  padding: 0.5rem;
+  text-align: center;
+  border-radius: 8px;
+  border: solid;
+  height: 2.5rem;
+  color: #757575;
+}
+#user_region {
+  width: 60%;
+  padding: 0.5rem;
+  text-align: center;
+  border-radius: 8px;
+  border: solid;
+  height: 2.5rem;
+  color: #757575;
+}
+#user_course {
+  width: 60%;
+  padding: 0.5rem;
+  text-align: center;
+  border-radius: 8px;
+  border: solid;
+  height: 2.5rem;
+  color: #757575;
 }

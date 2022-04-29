@@ -2,47 +2,44 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-@media screen and (min-width: 960px) {
-	/* 960px以上に適用されるCSS（PC用） */
-  .user {
-    border: solid;
-    width: 40%;
-    margin: 1rem auto;
-    margin-bottom: 2rem;
+.user {
+  border: solid;
+  width: 40%;
+  margin: 1rem auto;
+  margin-bottom: 2rem;
+  border-radius: 5px;
+}
+
+.form-input {
+  width: 60%;
+  padding: 0.5rem;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.remember {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.remember-me {
+  margin-left: 1rem;
+}
+
+.login-btn-field {
+  text-align: center;
+  margin: 1rem auto;
+  .login-btn {
+    padding: 0.5rem 1rem;
+    margin: 0 auto;
     border-radius: 5px;
-  }
-  
-  .form-input {
-    width: 60%;
-    padding: 0.5rem;
-    text-align: center;
-    border-radius: 8px;
-  }
-  
-  .remember {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .remember-me {
-    margin-left: 1rem;
-  }
-  
-  .login-btn-field {
-    text-align: center;
-    margin: 1rem auto;
-    .login-btn {
-      padding: 0.5rem 1rem;
-      margin: 0 auto;
-      border-radius: 5px;
+    border: solid;
+    &:hover {
+      cursor: pointer;
       border: solid;
-      &:hover {
-        cursor: pointer;
-        border: solid;
-        border-radius: 5px;
-        background-color: rgb(123, 215, 252);
-      }
+      border-radius: 5px;
+      background-color: rgb(123, 215, 252);
     }
   }
 }
