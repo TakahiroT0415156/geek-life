@@ -1,4 +1,18 @@
 <h2 class="title">投稿ページ</h2>
+
+<div class="add-tag">
+  <%= form_tag({controller:"posts",action:"new"}, method: :get) do %>
+    <%= label :about, "タグ追加", class: "form-label-name" %>
+    <div class="tag-field">
+      <%= text_field_tag :tag, "", class: "tag-input", placeholder: "追加したいタグの名前" %>
+    </div>
+    <div>
+      <%= submit_tag '追加する', class: "tag-btn" %>
+      <div class="comment-new">※タグがない場合は追加してください！</div>
+    </div>
+  <% end %>
+</div>
+
 <div class="form-box">
   <%= form_for @post do |f| %>
     <div class="new-form">
@@ -24,18 +38,6 @@
     </div>
     <div class="form-btn-field">
       <%= f.submit "投稿する", class: "form-btn" %>
-    </div>
-  <% end %>
-</div>
-
-<div class="add-tag">
-  <%= form_tag({controller:"posts",action:"new"}, method: :get) do %>
-    <%= label :about, "タグ追加", class: "form-label-name" %>
-    <div class="tag-field">
-      <%= text_field_tag :tag, "", class: "tag-input", placeholder: "追加したいタグの名前" %>
-    </div>
-    <div>
-      <%= submit_tag '追加する', class: "tag-btn" %>
     </div>
   <% end %>
 </div>
