@@ -50,17 +50,15 @@
     }
     
     .card-show {
-      background-color: rgba(217, 217, 255, 0.335);
+      width: 7rem;
+      height: 2.3rem;
+      margin: 0.5rem;
+      margin-top: 1rem;
       border: solid;
       border-radius: 5px;
-      text-align: center;
-      padding: 0.3rem;
-      width: 6rem;
-      margin: 20px auto;
       &:hover {
         cursor: pointer;
-        width: 6.5rem;
-        height: 2.5rem;
+        background-color: rgb(123, 215, 252);
       }
     }
   }
