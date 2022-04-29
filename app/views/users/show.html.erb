@@ -9,7 +9,7 @@
     <a href="/users/<%= @user.id %>"><%= image_tag @user.image_url, class: "user-image ios" %></a>
   <% end %>
   <div class="balloon4">
-    <p><%= @user.profile %></p>
+    <p><%= simple_format @user.profile %></p>
   </div>
 </div>
 
