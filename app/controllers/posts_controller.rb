@@ -15,7 +15,10 @@ class PostsController < ApplicationController
     else
       @posts = Post.all
     end
-    @posts = @posts.reverse
+    @posts = @posts.shuffle
+
+    post = Post.all
+    @post = post.sample
   end
 
   def new
