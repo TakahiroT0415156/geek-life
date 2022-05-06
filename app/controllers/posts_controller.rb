@@ -17,8 +17,8 @@ class PostsController < ApplicationController
     end
     @posts = @posts.shuffle
 
-    random = Post.all
-    @post = random.sample
+    random = User.all
+    @user = random.sample
   end
 
   def new
