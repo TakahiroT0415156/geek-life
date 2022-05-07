@@ -16,9 +16,11 @@ class PostsController < ApplicationController
       @posts = Post.all
     end
     @posts = @posts.shuffle
-
+    # @postsに代入されている配列の中身をシャッフルされて@postsの中に代入されるようにしている
     random = User.all
+    # randomの中にUserテーブルの中の全ての情報を入れる
     @user = random.sample
+    # @userにUserテーブルの全てをsample関数でランダムに一つだけ情報を取ってくるようにさせてその中に一つを代入させている
   end
 
   def new
@@ -45,19 +47,6 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-  end
-
-  def edit
-    @post = Post.find(params[:id])
-  end
-
-  def update
-    post = Post.find(params[:id])
-    if post.update(post_params)
-      redirect_to :action => "show", :id => post.id
-    else
-      redirect_to :action => "index"
-    end
   end
 
   def destroy
