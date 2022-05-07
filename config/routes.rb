@@ -4,9 +4,9 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
 
-  resources :users, only: [:show]
-
+  
   scope :geeksalon do
+    resources :users, only: [:show]
     resources :posts
   end
 
