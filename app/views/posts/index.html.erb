@@ -74,7 +74,7 @@
             <div class="user-tag">
               <div class="tag-flex">
                   <% if t.tags.ids.length > 2 %>
-                    <% t.tags.first(2).each do |tag| %>
+                    <% t.tags.shuffle.first(2).each do |tag| %>
                         <div class="tag-name"><%= tag.name %></div>
                     <% end %><span class="etc">...</span>
                   <% else %>
