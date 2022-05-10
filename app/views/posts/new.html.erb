@@ -1,10 +1,10 @@
 <h2 class="title">投稿ページ</h2>
 
 <div class="add-tag">
-  <%= form_tag({controller:"posts",action:"new"}, method: :get) do %>
+  <%= form_tag({controller:"posts", action:"new"}, data: {remote: true}, method: :get) do %>
     <%= label :about, "タグ追加", class: "form-label-name" %>
     <div class="tag-field">
-      <%= text_field_tag :tag, "", class: "tag-input", placeholder: "追加したいタグの名前" %>
+      <%= text_field_tag :tag, "", class: "tag-input", id: "tag-input", placeholder: "追加したいタグの名前" %>
     </div>
     <div>
       <%= submit_tag '追加する', class: "tag-btn" %>
@@ -13,31 +13,6 @@
   <% end %>
 </div>
 
-<div class="form-box">
-  <%= form_for @post do |f| %>
-    <div class="new-form">
-      <div class="form-tag">
-        <div class="form-label">
-          <%= f.label :about, "タグ一覧", class: "form-label-name" %>
-        </div>
-        <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
-          <%= tag.label class: 'form-check-label' do %>
-            <%= tag.check_box %>
-            <%= tag.text %>
-          <% end %>
-        <% end %>
-      </div>
-    </div>
-    <div class="new-form">
-      <div class="form-label">
-        <%= f.label :geek, "Geek史", class: "form-label-name" %>
-      </div>
-      <div class="form-field">
-        <%= f.text_area :geek, class: "form-field-area", placeholder: "自分のGeek史を書いてください！" %>
-      </div>
-    </div>
-    <div class="form-btn-field">
-      <%= f.submit "投稿する", class: "form-btn" %>
-    </div>
-  <% end %>
+<div id="post">
+  <%= render 'posts/create', posts: @posts %>
 </div>

@@ -26,11 +26,10 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     if params[:tag]
-      tag = Tag.create(name: params[:tag])
-      if tag.save
-        redirect_to action: "new"
+      @tag = Tag.create(name: params[:tag])
+      if @tag.save
       else
-        redirect_to action: "new"
+        render :new
       end
     end
   end
