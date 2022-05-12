@@ -2,11 +2,11 @@
 
 <div class="user-myimage">
   <% if @user.course == "Web" %>
-    <a href="/users/<%= @user.id %>"><%= image_tag @user.image_url, class: "user-image web" %></a>
+    <a href="/users/<%= @user.id %>" class="user-img"><%= image_tag @user.image_url, class: "user-image web" %></a>
   <% elsif @user.course == "Game" %>
-    <a href="/users/<%= @user.id %>"><%= image_tag @user.image_url, class: "user-image game" %></a>
+    <a href="/users/<%= @user.id %>" class="user-img"><%= image_tag @user.image_url, class: "user-image game" %></a>
   <% else %>
-    <a href="/users/<%= @user.id %>"><%= image_tag @user.image_url, class: "user-image ios" %></a>
+    <a href="/users/<%= @user.id %>" class="user-img"><%= image_tag @user.image_url, class: "user-image ios" %></a>
   <% end %>
   <div class="balloon4">
     <p><%= simple_format @user.profile %></p>

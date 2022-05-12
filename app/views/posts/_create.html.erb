@@ -5,12 +5,14 @@
         <div class="form-label">
           <%= f.label :about, "タグ一覧", class: "form-label-name" %>
         </div>
-        <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
-          <%= tag.label class: 'form-check-label' do %>
-            <%= tag.check_box %>
-            <%= tag.text %>
+        <div class="tag-all">
+          <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
+            <%= tag.label class: 'form-check-label' do %>
+              <%= tag.check_box %>
+              <%= tag.text %>
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
       </div>
     </div>
     <div class="new-form">
