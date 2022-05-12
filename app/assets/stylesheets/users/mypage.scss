@@ -12,6 +12,7 @@
     margin-right: 2rem;
     border-radius: 50%;
     background-color: #fff;
+    margin-top: auto;
     &.web {
       border: solid 3px #D8696D;
     }
@@ -24,12 +25,17 @@
   }
 }
 
+.user-img {
+  margin-top: auto;
+}
+
 .balloon4 {
   position: relative;
   margin: 2em 0 2em 40px;
   padding: 15px;
   background: rgb(207, 221, 255);
   border-radius: 30px;
+  width: 30%;
 }
 
 .balloon4:before {  
@@ -53,6 +59,7 @@
   background: rgb(207, 221, 255);
   border-radius: 50%;
 }
+
 .balloon4 p {
   margin: 0; 
   padding: 0;
