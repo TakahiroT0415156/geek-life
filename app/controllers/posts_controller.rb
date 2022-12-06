@@ -15,7 +15,7 @@ class PostsController < ApplicationController
     else
       @posts = Post.all
     end
-    @posts = @posts.shuffle
+    @posts = @posts.reverse
     # @postsに代入されている配列の中身をシャッフルされて@postsの中に代入されるようにしている
     random = User.all
     # randomの中にUserテーブルの中の全ての情報を入れる
