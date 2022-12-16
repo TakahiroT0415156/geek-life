@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
+  get 'recommends/index'
+  get 'recommends/new'
+  get 'recommends/destroy'
+  get 'recommends/show'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions'
   }
-
   
   scope :geeksalon do
     resources :users, only: [:show]
-    resources :posts
+    resources :posts, except: [:edit, :update]
   end
 
   root 'posts#index'

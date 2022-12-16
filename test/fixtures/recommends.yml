@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  youtube_url: MyString
+  recommend_about: MyText
+
+two:
+  youtube_url: MyString
+  recommend_about: MyText

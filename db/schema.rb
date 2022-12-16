@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_25_063106) do
+ActiveRecord::Schema.define(version: 2022_12_16_084922) do
 
   create_table "post_tag_relations", force: :cascade do |t|
     t.integer "post_id", null: false
@@ -24,6 +24,13 @@ ActiveRecord::Schema.define(version: 2022_04_25_063106) do
   create_table "posts", force: :cascade do |t|
     t.text "geek"
     t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "recommends", force: :cascade do |t|
+    t.string "youtube_url"
+    t.text "recommend_about"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

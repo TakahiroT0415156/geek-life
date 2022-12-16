@@ -17,8 +17,10 @@
     <div class="show"><%= simple_format @post.geek %></div>
   </div>
   <div class="btn-flex">
-    <% if user_signed_in? && current_user.id == @post.user_id %>  
-      <%= button_to "削除する", post_path(@post.id), method: :delete, class: "btn" %>
+    <% if user_signed_in? && current_user.id == @post.user_id %>
+      <%= button_to post_path(@post.id), method: :delete, class: "btn" do %>
+        <i class="fas fa-trash"></i><span> 削除する</span>
+      <% end %>
     <% end %>
   </div>
 </div>

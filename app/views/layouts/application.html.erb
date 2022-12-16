@@ -16,31 +16,31 @@
   <body>
     <header>
       <h1>
-        <%= link_to posts_path do %>
+        <%= link_to root_path do %>
           <%= image_tag "icon.png", size: "50x50" %>eek Life
         <% end %>
       </h1>
       <div class="header-list">
         <ul>
           <% if user_signed_in? && current_page?(new_post_path) %>
-            <li><%= link_to "一覧", posts_path %></li>
-            <li><i class="fas fa-ghost"></i> <%= link_to "投稿", new_post_path, class: "now" %></li>
+            <li><%= link_to "一覧", root_path %></li>
+            <li><i class="fas fa-ghost"></i> <%= link_to "Geek史投稿", new_post_path, class: "now" %></li>
             <li><%= link_to "マイページ", user_path(current_user.id) %></li>
             <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
           <% elsif user_signed_in? && current_page?(root_path) || user_signed_in? && current_page?(posts_path) %>
             <li><a href="/geeksalon/users/<%= @user.id %>">ランダム</a></li>
-            <li><i class="fas fa-ghost"></i> <%= link_to "一覧", posts_path, class: "now" %></li>
-            <li><%= link_to "投稿", new_post_path %></li>
+            <li><i class="fas fa-ghost"></i> <%= link_to "一覧", root_path, class: "now" %></li>
+            <li><%= link_to "Geek史投稿", new_post_path %></li>
             <li><%= link_to "マイページ", user_path(current_user.id) %></li>
             <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
           <% elsif user_signed_in? && current_page?(user_path(current_user.id)) %>
-            <li><%= link_to "一覧", posts_path %></li>
-            <li><%= link_to "投稿", new_post_path %></li>
+            <li><%= link_to "一覧", root_path %></li>
+            <li><%= link_to "Geek史投稿", new_post_path %></li>
             <li><i class="fas fa-ghost"></i> <%= link_to "マイページ", user_path(current_user.id), class: "now" %></li>
             <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
           <% elsif user_signed_in? %>
-            <li><%= link_to "一覧", posts_path %></li>
-            <li><%= link_to "投稿", new_post_path %></li>
+            <li><%= link_to "一覧", root_path %></li>
+            <li><%= link_to "Geek史投稿", new_post_path %></li>
             <li><%= link_to "マイページ", user_path(current_user.id) %></li>
             <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
           <% else %>

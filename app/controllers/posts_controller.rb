@@ -2,25 +2,24 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
-    if params[:search].present? && params[:tag_id].present?
-      search = params[:search]
-      posts = Post.joins(:user).where("geek LIKE ? OR username LIKE ? OR postion LIKE ? OR region LIKE ? OR course LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
-      post = Tag.find(params[:tag_id]).posts
-      @posts = posts && post
-    elsif params[:search].present?
-      search = params[:search]
-      @posts = Post.joins(:user).where("geek LIKE ? OR username LIKE ? OR postion LIKE ? OR region LIKE ? OR course LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
-    elsif params[:tag_id].present?
-      @posts =  Tag.find(params[:tag_id]).posts
+    search = params[:search]
+    tag_id = params[:tag_id]
+    input_posts = Post.joins(:user).where("geek LIKE ? OR username LIKE ? OR postion LIKE ? OR region LIKE ? OR course LIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+
+    if search.present? && tag_id.present?
+      post = Tag.find(tag_id).posts
+      @posts = input_posts && post
+    elsif search.present?
+      @posts = input_posts
+    elsif tag_id.present?
+      @posts =  Tag.find(tag_id).posts
     else
       @posts = Post.all
     end
-    @posts = @posts.reverse
-    # @postsに代入されている配列の中身をシャッフルされて@postsの中に代入されるようにしている
+
+    @posts = @posts.order(created_at: :DESC)
     random = User.all
-    # randomの中にUserテーブルの中の全ての情報を入れる
     @user = random.sample
-    # @userにUserテーブルの全てをsample関数でランダムに一つだけ情報を取ってくるようにさせてその中に一つを代入させている
   end
 
   def new
@@ -38,7 +37,7 @@ class PostsController < ApplicationController
     post = Post.new(post_params)
     post.user_id = current_user.id
     if post.save
-      redirect_to action: "index"
+      redirect_to root_path
     else
       redirect_to action: "new"
     end
@@ -51,7 +50,7 @@ class PostsController < ApplicationController
   def destroy
     post = Post.find(params[:id])
     post.destroy
-    redirect_to action: :index
+    redirect_to root_path
   end
 
   private
